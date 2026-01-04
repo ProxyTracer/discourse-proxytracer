@@ -1,0 +1,49 @@
+plugins:
+  proxytracer_enabled:
+    default: true
+    client: true
+  ProxyTracer_API_Key:
+    default: ''
+    client: false
+  API_Timeout_ms:
+    default: 3000
+    client: false
+  Cache_Duration_hours:
+    default: 32
+    client: false
+  Fail_Open_on_Error:
+    default: true
+    client: false
+  Enabled_during_Signup:
+    default: true
+    client: false
+  Enabled_during_Login:
+    default: false
+    client: false
+  Enabled_for_All_Visitors:
+    default: false
+    client: false
+  Whitelisted_IPs:
+    default: ''
+    type: list
+    client: false
+  Block_Message:
+    default: '⚠️ Access denied: Proxy or VPN detected.'
+    client: false
+    locale_default:
+      zh_CN: '⚠️ 拒绝访问：检测到代理或 VPN。'
+      hi: '⚠️ पहुंच अस्वीकृत: प्रॉक्सी या वीपीएन का पता चला।'
+      es: '⚠️ Acceso denegado: Proxy o VPN detectado.'
+      fr: '⚠️ Accès refusé : Proxy ou VPN détecté.'
+      ar: '⚠️ تم رفض الوصول: تم اكتشاف بروكسي أو VPN.'
+      bn: '⚠️ অ্যাক্সেস প্রত্যাখ্যাত: প্রক্সি বা ভিপিএন শনাক্ত হয়েছে।'
+      ru: '⚠️ В доступе отказано: обнаружен прокси или VPN.'
+      pt: '⚠️ Acesso negado: Proxy ou VPN detectado.'
+      ur: '⚠️ رسائی سے انکار: پراکسی یا وی پی این کا پتہ چلا ہے۔'
+      id: '⚠️ Akses ditolak: Proxy atau VPN terdeteksi.'
+      de: '⚠️ Zugriff verweigert: Proxy oder VPN erkannt.'
+      ja: '⚠️ アクセス拒否：プロキシまたはVPNが検出されました。'
+      tr: '⚠️ Erişim reddedildi: Proxy veya VPN algılandı.'
+      it: '⚠️ Accesso negato: Proxy o VPN rilevato.'
+      pl: '⚠️ Odmowa dostępu: Wykryto serwer proxy lub VPN.'
+      uk: '⚠️ У доступі відмовлено: Виявлено проксі або VPN.'

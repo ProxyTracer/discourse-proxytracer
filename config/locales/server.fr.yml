@@ -1,0 +1,15 @@
+fr:
+  site_settings:
+    proxytracer_enabled: "Interrupteur principal pour activer ou désactiver l'ensemble du plugin ProxyTracer."
+    ProxyTracer_API_Key: "Votre jeton API que vous pouvez obtenir sur <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
+    API_Timeout_ms: "Combien de temps attendre la réponse de l'API avant l'expiration (unité : millisecondes)."
+    Cache_Duration_hours: "Combien de temps conserver une adresse IP dans Redis avant de vérifier à nouveau l'API (unité : heures)."
+    Fail_Open_on_Error: "Si l'API plante ou expire, autoriser l'utilisateur à s'inscrire/se connecter quand même pour éviter de bloquer tout le monde."
+    Enabled_during_Signup: "Bloquer les proxys et les VPN lorsqu'un nouvel utilisateur tente de s'inscrire."
+    Enabled_during_Login: "Bloquer les proxys et les VPN lorsqu'un utilisateur existant tente de se connecter."
+    Enabled_for_All_Visitors: "Bloquer les proxys et les VPN pour les empêcher d'accéder ou de consulter n'importe quelle page du forum. (Avertissement : cela vérifie chaque visiteur et utilise fortement votre quota d'API et votre cache Redis)."
+    Block_Message: "Le message d'erreur exact affiché à l'utilisateur lorsqu'il est bloqué."
+    Whitelisted_IPs: "Adresses IP ou plages CIDR (ex. 192.168.1.0/24) qui sont strictement autorisées à contourner ProxyTracer. Tapez chaque IP/plage et appuyez sur Entrée pour l'ajouter à la liste."
+  dashboard:
+    problem:
+      proxy_tracer_missing_key: "ProxyTracer est inactif ! Veuillez entrer votre clé API ProxyTracer dans les paramètres du plugin pour activer le blocage."

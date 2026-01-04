@@ -1,0 +1,15 @@
+zh_CN:
+  site_settings:
+    proxytracer_enabled: "启用或禁用整个 ProxyTracer 插件的主开关。"
+    ProxyTracer_API_Key: "您可以从 <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> 获取您的 API 令牌。"
+    API_Timeout_ms: "在超时之前等待 API 响应的时间（单位：毫秒）。"
+    Cache_Duration_hours: "在再次检查 API 之前，在 Redis 中记住 IP 地址多长时间（单位：小时）。"
+    Fail_Open_on_Error: "如果 API 崩溃或超时，允许用户继续注册/登录，以防将所有人锁定。"
+    Enabled_during_Signup: "当新用户尝试注册时阻止代理和 VPN。"
+    Enabled_during_Login: "当现有用户尝试登录时阻止代理和 VPN。"
+    Enabled_for_All_Visitors: "阻止代理和 VPN 访问或查看论坛上的任何页面。（警告：这会检查每位访问者，并大量使用您的 API 配额和 Redis 缓存）。"
+    Block_Message: "用户被阻止时显示的确切错误消息。"
+    Whitelisted_IPs: "严格允许绕过 ProxyTracer 的 IP 地址或 CIDR 范围（例如 192.168.1.0/24）。输入每个 IP/范围并按 Enter 键将其添加到列表中。"
+  dashboard:
+    problem:
+      proxy_tracer_missing_key: "ProxyTracer 处于非活动状态！请在插件设置中输入您的 ProxyTracer API 密钥以启用阻止功能。"

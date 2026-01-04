@@ -1,0 +1,15 @@
+id:
+  site_settings:
+    proxytracer_enabled: "Tombol utama untuk mengaktifkan atau menonaktifkan seluruh plugin ProxyTracer."
+    ProxyTracer_API_Key: "Token API Anda yang bisa Anda dapatkan dari <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
+    API_Timeout_ms: "Berapa lama menunggu API merespons sebelum waktu habis (satuan: milidetik)."
+    Cache_Duration_hours: "Berapa lama mengingat alamat IP di Redis sebelum memeriksa API lagi (satuan: jam)."
+    Fail_Open_on_Error: "Jika API mogok atau kehabisan waktu, izinkan pengguna untuk mendaftar/masuk guna mencegah penguncian semua orang."
+    Enabled_during_Signup: "Blokir proksi dan VPN saat pengguna baru mencoba mendaftar."
+    Enabled_during_Login: "Blokir proksi dan VPN saat pengguna yang ada mencoba masuk."
+    Enabled_for_All_Visitors: "Blokir proksi dan VPN agar tidak dapat mengakses atau melihat halaman mana pun di forum. (Peringatan: Ini memeriksa setiap pengunjung dan sangat menggunakan kuota API dan cache Redis Anda)."
+    Block_Message: "Pesan kesalahan persis yang ditunjukkan kepada pengguna saat mereka diblokir."
+    Whitelisted_IPs: "Alamat IP atau rentang CIDR (misal, 192.168.1.0/24) yang diizinkan secara ketat untuk melewati ProxyTracer. Ketik setiap IP/rentang dan tekan Enter untuk menambahkannya ke daftar."
+  dashboard:
+    problem:
+      proxy_tracer_missing_key: "ProxyTracer tidak aktif! Silakan masukkan Kunci API ProxyTracer Anda di pengaturan plugin untuk mengaktifkan pemblokiran."

@@ -1,0 +1,15 @@
+ar:
+  site_settings:
+    proxytracer_enabled: "المفتاح الرئيسي لتمكين أو تعطيل إضافة ProxyTracer بالكامل."
+    ProxyTracer_API_Key: "رمز API الخاص بك الذي يمكنك الحصول عليه من <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
+    API_Timeout_ms: "المدة التي يجب انتظارها لاستجابة API قبل انتهاء المهلة (الوحدة: مللي ثانية)."
+    Cache_Duration_hours: "المدة التي يجب أن يتذكر فيها عنوان IP في Redis قبل التحقق من API مرة أخرى (الوحدة: ساعات)."
+    Fail_Open_on_Error: "إذا تعطلت واجهة برمجة التطبيقات أو انتهت مهلتها، اسمح للمستخدم بالتسجيل/تسجيل الدخول على أي حال لمنع حظر الجميع."
+    Enabled_during_Signup: "حظر الوكلاء (Proxies) وشبكات VPN عندما يحاول مستخدم جديد التسجيل."
+    Enabled_during_Login: "حظر الوكلاء (Proxies) وشبكات VPN عندما يحاول مستخدم حالي تسجيل الدخول."
+    Enabled_for_All_Visitors: "حظر الوكلاء (Proxies) وشبكات VPN من الوصول إلى أي صفحة في المنتدى أو عرضها. (تحذير: يتحقق هذا من كل زائر ويستهلك بشكل كبير حصة API الخاصة بك وذاكرة تخزين Redis)."
+    Block_Message: "رسالة الخطأ الدقيقة التي تظهر للمستخدم عند حظره."
+    Whitelisted_IPs: "عناوين IP أو نطاقات CIDR (مثل 192.168.1.0/24) المسموح لها تمامًا بتجاوز ProxyTracer. اكتب كل عنوان IP/نطاق واضغط على Enter لإضافته إلى القائمة."
+  dashboard:
+    problem:
+      proxy_tracer_missing_key: "ProxyTracer غير نشط! يرجى إدخال مفتاح ProxyTracer API الخاص بك في إعدادات المكون الإضافي لتمكين الحظر."

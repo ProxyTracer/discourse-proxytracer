@@ -1,0 +1,15 @@
+ja:
+  site_settings:
+    proxytracer_enabled: "ProxyTracer プラグイン全体を有効または無効にするマスタートグル。"
+    ProxyTracer_API_Key: "<a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> から取得できるAPIトークン。"
+    API_Timeout_ms: "タイムアウトする前にAPIの応答を待つ時間（単位：ミリ秒）。"
+    Cache_Duration_hours: "APIを再確認する前にIPアドレスをRedisに記憶しておく時間（単位：時間）。"
+    Fail_Open_on_Error: "APIがクラッシュまたはタイムアウトした場合でも、全員がロックアウトされるのを防ぐために、ユーザーの登録/ログインを許可します。"
+    Enabled_during_Signup: "新規ユーザーが登録を試みたときにプロキシとVPNをブロックします。"
+    Enabled_during_Login: "既存のユーザーがログインを試みたときにプロキシとVPNをブロックします。"
+    Enabled_for_All_Visitors: "プロキシと VPN がフォーラムのページにアクセスまたは表示するのをブロックします。（警告：これはすべての訪問者をチェックし、API クォータと Redis キャッシュを大量に消費します）。"
+    Block_Message: "ブロックされたときにユーザーに表示される正確なエラーメッセージ。"
+    Whitelisted_IPs: "ProxyTracer のバイパスを厳密に許可された IP アドレスまたは CIDR 範囲（例：192.168.1.0/24）。各 IP/範囲を入力し、Enter キーを押してリストに追加します。"
+  dashboard:
+    problem:
+      proxy_tracer_missing_key: "ProxyTracerは非アクティブです！ブロックを有効にするには、プラグイン設定にProxyTracer APIキーを入力してください。"

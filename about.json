@@ -1,0 +1,7 @@
+{
+  "name": "discourse-proxytracer",
+  "about": "Automatically block users behind a VPN, Tor node or proxy from registering, logging in, or viewing your Discourse forum depending on your choice.",
+  "version": "0.1.0",
+  "authors": "ProxyTracer",
+  "url": "https://github.com/proxytracer/discourse-proxytracer"
+}
