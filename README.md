@@ -137,13 +137,16 @@ To verify that your networking configuration is successfully passing the correct
 ### Emergency Access (Safe Mode)
 
 > [!TIP]
-> **Locked out?** If you accidentally block your own IP address while configuring ProxyTracer (e.g., you are currently connected to a VPN), you can easily regain access using Discourse's built-in Safe Mode.
+> **Locked out?** If you accidentally block your own IP address while configuring ProxyTracer (e.g., you are currently connected to a VPN), you can regain access by disabling the plugin via SSH:
 >
-> 1. Navigate to `https://yoursite.com/safe-mode`
-> 2. Check the box for **"Disable all plugins"** and click **"Enter Safe Mode"**.
-> 3. Log in normally and navigate to **Admin → Plugins → ProxyTracer**.
-> 4. Temporarily disable the plugin or add your current IP to the **Whitelisted IPs** list.
-> 5. Exit Safe Mode to resume normal site operations. 
+> ```bash
+cd /var/discourse
+./launcher enter app
+rails c
+SiteSetting.proxytracer_enabled = false
+exit
+exit
+```
 
 ## License
 
