@@ -134,19 +134,19 @@ To verify that your networking configuration is successfully passing the correct
    * **Incorrect Setup:** If you observe Cloudflare IPs (see [here](https://www.cloudflare.com/ips/) for a full list) or local network IPs (e.g., `127.0.0.1`, `172.x.x.x`), IP forwarding is failing. ProxyTracer cannot protect your site in this state.
    * **Correct Setup:** If you observe standard, unique residential IP addresses, your network architecture is configured correctly and ProxyTracer is actively monitoring your traffic.
 
-### Emergency Access (Safe Mode)
+### Emergency Access 
 
 > [!TIP]
 > **Locked out?** If you accidentally block your own IP address while configuring ProxyTracer (e.g., you are currently connected to a VPN), you can regain access by disabling the plugin via SSH:
 >
 > ```bash
-cd /var/discourse
-./launcher enter app
-rails c
-SiteSetting.proxytracer_enabled = false
-exit
-exit
-```
+> cd /var/discourse
+> ./launcher enter app
+> rails c
+> SiteSetting.proxytracer_enabled = false
+> exit
+> exit
+> ```
 
 ## License
 
