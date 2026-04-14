@@ -1,6 +1,6 @@
 # name: discourse-proxytracer
 # about: Automatically block users behind a VPN, Tor node or proxy from registering, logging in, or viewing your Discourse forum depending on your choice.
-# version: 0.1.0
+# version: 0.1.1
 # authors: ProxyTracer
 # url: https://github.com/proxytracer/discourse-proxytracer
 enabled_site_setting :proxytracer_enabled
@@ -54,7 +54,7 @@ after_initialize do
       is_proxy = ProxyTracerBlocker::ProxyTracerApi.check_ip(ip_to_check)
 
       if is_proxy
-        render json: { error: SiteSetting.Block_Message }, status: :forbidden
+        render json: { error: SiteSetting.Block_Message }, status: :ok
       end
     end
   end
