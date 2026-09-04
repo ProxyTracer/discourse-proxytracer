@@ -1,15 +1,41 @@
 uk:
   site_settings:
-    proxytracer_enabled: "Головний перемикач для ввімкнення або вимкнення всього плагіна ProxyTracer."
-    ProxyTracer_API_Key: "Ваш токен API, який ви можете отримати на <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
-    API_Timeout_ms: "Час очікування на відповідь API до закінчення часу очікування (одиниця виміру: мілісекунди)."
-    Cache_Duration_hours: "Скільки часу зберігати IP-адресу в Redis перед повторною перевіркою API (одиниця виміру: години)."
-    Fail_Open_on_Error: "Якщо API дає збій або час очікування вичерпано, дозвольте користувачеві зареєструватися/увійти, щоб запобігти блокуванню всіх."
-    Enabled_during_Signup: "Блокувати проксі та VPN, коли новий користувач намагається зареєструватися."
-    Enabled_during_Login: "Блокувати проксі та VPN, коли існуючий користувач намагається увійти."
-    Enabled_for_All_Visitors: "Блокувати доступ або перегляд будь-яких сторінок форуму через проксі та VPN. (Попередження: це перевіряє кожного відвідувача та сильно використовує вашу квоту API та кеш Redis)."
-    Block_Message: "Точне повідомлення про помилку, яке відображається користувачеві під час блокування."
-    Whitelisted_IPs: "IP-адреси або діапазони CIDR (наприклад, 192.168.1.0/24), яким суворо дозволено обходити ProxyTracer. Введіть кожну IP-адресу/діапазон і натисніть Enter, щоб додати їх до списку."
+    proxytracer_enabled: Головний перемикач для увімкнення або вимкнення плагіна ProxyTracer.
+    ProxyTracer_API_Key: Ваш API-токен, який можна отримати на <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a>.
+    API_Timeout_ms: Час очікування відповіді API до тайм-ауту (у мілісекундах).
+    Cache_Duration_hours: Скільки годин зберігати IP-адресу в Redis перед повторною
+      перевіркою API.
+    Fail_Open_on_Error: У разі збою API дозволити реєстрацію/вхід, щоб запобігти блокуванню
+      користувачів.
+    Enabled_during_Signup: Блокувати проксі та VPN при спробі реєстрації нового користувача.
+    Enabled_during_Login: Блокувати проксі та VPN при спробі входу наявного користувача.
+    Enabled_for_All_Visitors: Блокувати доступ через проксі та VPN до будь-яких сторінок
+      форуму.
+    Strict_Auth_Verification: Якщо увімкнено, відвідувачі, які пройшли CAPTCHA для
+      перегляду форуму, повинні пройти окрему перевірку під час реєстрації або входу.
+    ProxyTracer_Action: 'Дія при виявленні проксі або VPN: Блокувати доступ або Запросити
+      CAPTCHA.'
+    ProxyTracer_Captcha_Provider: Сервіс CAPTCHA для перевірки (Cloudflare Turnstile
+      або hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Ваш публічний ключ сайту (Site Key) для Cloudflare
+      Turnstile або hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: Ваш приватний секретний ключ (Secret Key) для
+      Cloudflare Turnstile або hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: Кількість годин, протягом яких відвідувач
+      залишається верифікованим у Redis та cookies.
+    Block_Message: Точне повідомлення про помилку, яке відображається користувачеві
+      при блокуванні.
+    Whitelisted_IPs: IP-адреси або діапазони CIDR, яким дозволено обходити ProxyTracer.
+    ProxyTracer_Log_Usernames: Записувати імена користувачів заблокованих акаунтів.
+    ProxyTracer_Stats_TTL_days: Кількість днів зберігання щоденної статистики в Redis.
+    ProxyTracer_Show_Branding: Відображати бейджі 'Захищено ProxyTracer' на перевірках
+      CAPTCHA та сторінці верифікації.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer неактивний! Будь ласка, введіть свій API-ключ ProxyTracer у налаштуваннях плагіна, щоб увімкнути блокування проксі та VPN."
+      proxy_tracer_missing_key: "ProxyTracer неактивний! Введіть ваш API-ключ ProxyTracer у налаштуваннях плагіна."
+      proxy_tracer_missing_captcha_key: "Дію CAPTCHA у ProxyTracer увімкнено, але ключ сайту (Site Key) або секретний ключ (Secret Key) CAPTCHA не налаштовано."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Доступ заборонено. Ми виявили, що ви використовуєте VPN, проксі або
+      мережу Tor, що заборонено на цьому форумі.

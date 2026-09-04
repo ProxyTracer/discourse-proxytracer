@@ -1,0 +1,18 @@
+uk:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: Статистика
+          logs: Журнал Блокувань
+        stats:
+          title: Трафік та виявлення ProxyTracer (за останні 30 днів)
+          empty: Трафік ще не зафіксовано.
+        logs:
+          title: Нещодавні заблоковані запити (останні 500)
+          timestamp: Час
+          ip: IP-адреса
+          username: Ім'я користувача
+          action: Дія
+          empty: Заблокованих запитів ще немає.

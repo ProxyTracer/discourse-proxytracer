@@ -1,0 +1,18 @@
+ur:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: اعداد و شمار
+          logs: بلاک شدہ لاگز
+        stats:
+          title: ProxyTracer ٹریفک اور کھوج (گزشتہ 30 دن)
+          empty: ابھی تک کوئی ٹریفک ریکارڈ نہیں ہوئی۔
+        logs:
+          title: حالیہ بلاک شدہ درخواستیں (آخری 500)
+          timestamp: وقت
+          ip: IP پتہ
+          username: صارف کا نام
+          action: کارروائی
+          empty: ابھی تک کوئی بلاک شدہ درخواست ریکارڈ نہیں ہوئی۔

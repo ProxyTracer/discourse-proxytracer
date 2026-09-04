@@ -1,0 +1,18 @@
+id:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: Statistik
+          logs: Log Pemblokiran
+        stats:
+          title: Lalu Lintas & Deteksi ProxyTracer (30 Hari Terakhir)
+          empty: Belum ada lalu lintas yang tercatat.
+        logs:
+          title: Permintaan Diblokir Terbaru (500 Terakhir)
+          timestamp: Waktu
+          ip: Alamat IP
+          username: Nama Pengguna
+          action: Tindakan
+          empty: Belum ada permintaan yang diblokir tercatat.

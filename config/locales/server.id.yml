@@ -1,15 +1,43 @@
 id:
   site_settings:
-    proxytracer_enabled: "Tombol utama untuk mengaktifkan atau menonaktifkan seluruh plugin ProxyTracer."
-    ProxyTracer_API_Key: "Token API Anda yang bisa Anda dapatkan dari <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
-    API_Timeout_ms: "Berapa lama menunggu API merespons sebelum waktu habis (satuan: milidetik)."
-    Cache_Duration_hours: "Berapa lama mengingat alamat IP di Redis sebelum memeriksa API lagi (satuan: jam)."
-    Fail_Open_on_Error: "Jika API mogok atau kehabisan waktu, izinkan pengguna untuk mendaftar/masuk guna mencegah penguncian semua orang."
-    Enabled_during_Signup: "Blokir proksi dan VPN saat pengguna baru mencoba mendaftar."
-    Enabled_during_Login: "Blokir proksi dan VPN saat pengguna yang ada mencoba masuk."
-    Enabled_for_All_Visitors: "Blokir proksi dan VPN agar tidak dapat mengakses atau melihat halaman mana pun di forum. (Peringatan: Ini memeriksa setiap pengunjung dan sangat menggunakan kuota API dan cache Redis Anda)."
-    Block_Message: "Pesan kesalahan persis yang ditunjukkan kepada pengguna saat mereka diblokir."
-    Whitelisted_IPs: "Alamat IP atau rentang CIDR (misal, 192.168.1.0/24) yang diizinkan secara ketat untuk melewati ProxyTracer. Ketik setiap IP/rentang dan tekan Enter untuk menambahkannya ke daftar."
+    proxytracer_enabled: Sakelar utama untuk mengaktifkan atau menonaktifkan seluruh
+      plugin ProxyTracer.
+    ProxyTracer_API_Key: Token API Anda yang dapat diperoleh dari <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a>.
+    API_Timeout_ms: 'Berapa lama menunggu respons API sebelum waktu habis (satuan:
+      milidetik).'
+    Cache_Duration_hours: Berapa jam mengingat alamat IP di Redis sebelum memeriksa
+      API lagi.
+    Fail_Open_on_Error: Jika API bermasalah atau waktu habis, tetap izinkan pendaftaran/masuk
+      untuk mencegah penguncian.
+    Enabled_during_Signup: Blokir proxy dan VPN saat pengguna baru mencoba mendaftar.
+    Enabled_during_Login: Blokir proxy dan VPN saat pengguna mencoba masuk.
+    Enabled_for_All_Visitors: Blokir proxy dan VPN dari mengakses halaman mana pun
+      di forum.
+    Strict_Auth_Verification: Saat diaktifkan, pengunjung yang telah menyelesaikan
+      CAPTCHA untuk melihat forum tetap harus menyelesaikan CAPTCHA terpisah saat
+      mendaftar atau masuk.
+    ProxyTracer_Action: 'Tindakan saat proxy atau VPN terdeteksi: Blokir akses atau
+      Tantang dengan CAPTCHA.'
+    ProxyTracer_Captcha_Provider: Layanan CAPTCHA yang digunakan (Cloudflare Turnstile
+      atau hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Kunci Situs publik Anda untuk Cloudflare Turnstile
+      atau hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: Kunci Rahasia pribadi Anda untuk Cloudflare Turnstile
+      atau hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: Berapa jam pengunjung tetap diverifikasi
+      di Redis dan cookie setelah menyelesaikan CAPTCHA.
+    Block_Message: Pesan kesalahan yang ditampilkan kepada pengguna saat diblokir.
+    Whitelisted_IPs: Alamat IP atau rentang CIDR yang diizinkan melewati ProxyTracer.
+    ProxyTracer_Log_Usernames: Catat nama pengguna akun yang diblokir.
+    ProxyTracer_Stats_TTL_days: Jumlah hari untuk menyimpan statistik harian di Redis.
+    ProxyTracer_Show_Branding: Tampilkan lencana 'Protected by ProxyTracer' pada tantangan
+      CAPTCHA dan halaman verifikasi.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer tidak aktif! Silakan masukkan Kunci API ProxyTracer Anda di pengaturan plugin untuk mengaktifkan pemblokiran."
+      proxy_tracer_missing_key: "ProxyTracer tidak aktif! Silakan masukkan Kunci API ProxyTracer Anda di pengaturan plugin."
+      proxy_tracer_missing_captcha_key: "Tindakan CAPTCHA ProxyTracer diaktifkan, tetapi Kunci Situs (Site Key) atau Kunci Rahasia (Secret Key) CAPTCHA belum dikonfigurasi."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Akses ditolak. Kami mendeteksi bahwa Anda menggunakan VPN, proxy, atau
+      jaringan Tor, yang tidak diizinkan di forum ini.

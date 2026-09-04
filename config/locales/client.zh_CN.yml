@@ -1,0 +1,18 @@
+zh_CN:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: 数据统计
+          logs: 拦截日志
+        stats:
+          title: ProxyTracer 流量与拦截统计（近 30 天）
+          empty: 暂无记录的流量数据。
+        logs:
+          title: 最近拦截的请求（最近 500 条）
+          timestamp: 时间
+          ip: IP 地址
+          username: 用户名
+          action: 拦截动作
+          empty: 暂无拦截请求记录。

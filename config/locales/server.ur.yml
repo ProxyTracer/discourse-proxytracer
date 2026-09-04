@@ -1,15 +1,42 @@
 ur:
   site_settings:
-    proxytracer_enabled: "مکمل ProxyTracer پلگ ان کو فعال یا غیر فعال کرنے کے لیے ماسٹر ٹوگل۔"
-    ProxyTracer_API_Key: "آپ کا API ٹوکن جو آپ <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> سے حاصل کر سکتے ہیں۔"
-    API_Timeout_ms: "ٹائم آؤٹ ہونے سے پہلے API کے جواب کے لیے کتنا انتظار کرنا ہے (اکائی: ملی سیکنڈ)۔"
-    Cache_Duration_hours: "API کو دوبارہ چیک کرنے سے پہلے Redis میں IP ایڈریس کو کتنی دیر تک یاد رکھنا ہے (اکائی: گھنٹے)۔"
-    Fail_Open_on_Error: "اگر API کریش ہو جائے یا ٹائم آؤٹ ہو جائے، تو سب کو لاک آؤٹ ہونے سے بچانے کے لیے صارف کو ویسے بھی رجسٹر/لاگ ان کرنے دیں۔"
-    Enabled_during_Signup: "جب کوئی نیا صارف رجسٹر ہونے کی کوشش کرے تو پراکسیز اور وی پی این کو بلاک کریں۔"
-    Enabled_during_Login: "جب کوئی موجودہ صارف لاگ ان کرنے کی کوشش کرے تو پراکسیز اور وی پی این کو بلاک کریں۔"
-    Enabled_for_All_Visitors: "پراکسیز اور وی پی این کو فورم کے کسی بھی صفحے تک رسائی یا دیکھنے سے روکیں۔ (انتباہ: یہ ہر آنے والے کو چیک کرتا ہے اور آپ کے API کوٹہ اور Redis کیش کا بہت زیادہ استعمال کرتا ہے)۔"
-    Block_Message: "بلاک ہونے پر صارف کو دکھایا جانے والا درست غلطی کا پیغام۔"
-    Whitelisted_IPs: "آئی پی ایڈریسز یا سی آئی ڈی آر رینجز (جیسے 192.168.1.0/24) جنہیں سختی سے ProxyTracer کو نظرانداز کرنے کی اجازت ہے۔ ہر آئی پی/رینج ٹائپ کریں اور اسے فہرست میں شامل کرنے کے لیے Enter دبائیں۔"
+    proxytracer_enabled: مکمل ProxyTracer پلگ ان کو فعال یا غیر فعال کرنے کا اہم سوئچ۔
+    ProxyTracer_API_Key: آپ کا API ٹوکن جو آپ <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a> سے حاصل کر سکتے ہیں۔
+    API_Timeout_ms: ٹائم آؤٹ سے پہلے API کے جواب کا انتظار کرنے کا وقت (ملی سیکنڈ
+      میں)۔
+    Cache_Duration_hours: دوبارہ API چیک کرنے سے پہلے کتنے گھنٹے Redis میں IP پتہ
+      یاد رکھنا ہے۔
+    Fail_Open_on_Error: اگر API کریش ہو جائے تو رجسٹریشن/لاگ ان کی اجازت دیں تاکہ
+      تمام صارفین بلاک نہ ہوں۔
+    Enabled_during_Signup: نیا صارف رجسٹر کرتے وقت پراکسی اور VPN کو بلاک کریں۔
+    Enabled_during_Login: موجودہ صارف لاگ ان کرتے وقت پراکسی اور VPN کو بلاک کریں۔
+    Enabled_for_All_Visitors: فورم کے کسی بھی صفحے تک رسائی سے پراکسی اور VPN کو بلاک
+      کریں۔
+    Strict_Auth_Verification: فعال ہونے پر، فورم دیکھنے کے لیے کیپچا حل کرنے والے
+      زائرین کو رجسٹریشن یا لاگ ان کے وقت الگ کیپچا حل کرنا ہوگا۔
+    ProxyTracer_Action: 'پراکسی یا VPN کا پتہ چلنے پر کارروائی: رسائی بلاک کریں یا
+      کیپچا چیلنج دیں۔'
+    ProxyTracer_Captcha_Provider: چیلنجز کے لیے کیپچا سروس (Cloudflare Turnstile یا
+      hCaptcha)۔
+    ProxyTracer_Captcha_Site_Key: Cloudflare Turnstile یا hCaptcha کے لیے آپ کی عوامی
+      سائٹ کی کلید۔
+    ProxyTracer_Captcha_Secret_Key: Cloudflare Turnstile یا hCaptcha کے لیے آپ کی
+      نجی خفیہ کلید۔
+    ProxyTracer_Captcha_Clearance_hours: کیپچا حل کرنے کے بعد وزیٹر کتنے گھنٹے تصدیق
+      شدہ رہے گا۔
+    Block_Message: بلاک ہونے پر صارف کو دکھایا جانے والا غلطی کا پیغام۔
+    Whitelisted_IPs: IP پتے یا CIDR حدود جنہیں ProxyTracer کو بائی پاس کرنے کی اجازت
+      ہے۔
+    ProxyTracer_Log_Usernames: بلاک شدہ اکاؤنٹس کے صارف نام لاگ کریں۔
+    ProxyTracer_Stats_TTL_days: Redis میں روزانہ کے اعداد و شمار برقرار رکھنے کے دنوں
+      کی تعداد۔
+    ProxyTracer_Show_Branding: کیپچا چیلنجز پر 'Protected by ProxyTracer' بیج دکھائیں۔
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer غیر فعال ہے! بلاکنگ کو فعال کرنے کے لیے براہ کرم پلگ ان کی ترتیبات میں اپنی ProxyTracer API کلید درج کریں۔"
+      proxy_tracer_missing_key: "ProxyTracer غیر فعال ہے! پراکسی اور VPN بلاکنگ فعال کرنے کے لیے پلگ ان سیٹنگز میں اپنی API کلید درج کریں۔"
+      proxy_tracer_missing_captcha_key: "ProxyTracer کا کیپچا (CAPTCHA) ایکشن فعال ہے، لیکن کیپچا سائٹ کی (Site Key) یا خفیہ کی (Secret Key) کنفیگر نہیں کی گئی ہے۔"
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: رسائی مسترد کر دی گئی۔ ہم نے پایا ہے کہ آپ VPN، پراکسی یا Tor نیٹ ورک
+      استعمال کر رہے ہیں جو اس فورم پر ممنوع ہے۔

@@ -1,15 +1,47 @@
 tr:
   site_settings:
-    proxytracer_enabled: "Tüm ProxyTracer eklentisini etkinleştirmek veya devre dışı bırakmak için ana geçiş."
-    ProxyTracer_API_Key: "<a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> adresinden alabileceğiniz API jetonunuz."
-    API_Timeout_ms: "Zaman aşımına uğramadan önce API'nin yanıt vermesi için ne kadar bekleneceği (birim: milisaniye)."
-    Cache_Duration_hours: "API'yi tekrar kontrol etmeden önce Redis'te bir IP adresinin ne kadar süreyle hatırlanacağı (birim: saat)."
-    Fail_Open_on_Error: "API çökerse veya zaman aşımına uğrarsa, herkesin kilitlenmesini önlemek için kullanıcının yine de kaydolmasına/oturum açmasına izin verin."
-    Enabled_during_Signup: "Yeni bir kullanıcı kaydolmaya çalıştığında proxy'leri ve VPN'leri engelleyin."
-    Enabled_during_Login: "Mevcut bir kullanıcı oturum açmaya çalıştığında proxy'leri ve VPN'leri engelleyin."
-    Enabled_for_All_Visitors: "Proxy'lerin ve VPN'lerin forumdaki herhangi bir sayfaya erişmesini veya görüntülemesini engelleyin. (Uyarı: Bu, her ziyaretçiyi kontrol eder ve API kotanızı ve Redis önbelleğinizi yoğun bir şekilde kullanır)."
-    Block_Message: "Engellendiklerinde kullanıcıya gösterilen tam hata mesajı."
-    Whitelisted_IPs: "ProxyTracer'ı atlamasına kesinlikle izin verilen IP adresleri veya CIDR aralıkları (örn. 192.168.1.0/24). Her IP'yi/aralığı yazın ve listeye eklemek için Enter'a basın."
+    proxytracer_enabled: Tüm ProxyTracer eklentisini etkinleştirmek veya devre dışı
+      bırakmak için ana anahtar.
+    ProxyTracer_API_Key: <a href="https://proxytracer.com/dashboard" target="_blank">proxytracer.com</a>
+      adresinden alabileceğiniz API belirteciniz.
+    API_Timeout_ms: Zaman aşımına uğramadan önce API'den yanıt beklenilecek süre (milisaniye
+      cinsinden).
+    Cache_Duration_hours: API'yi tekrar kontrol etmeden önce bir IP adresinin Redis'te
+      kaç saat tutulacağı.
+    Fail_Open_on_Error: API çökerse veya zaman aşımına uğrarsa, herkesin kilitlenmesini
+      önlemek için kayda/girişe izin ver.
+    Enabled_during_Signup: Yeni bir kullanıcı kaydolmaya çalıştığında proxy'leri ve
+      VPN'leri engelle.
+    Enabled_during_Login: Mevcut bir kullanıcı giriş yapmaya çalıştığında proxy'leri
+      ve VPN'leri engelle.
+    Enabled_for_All_Visitors: Proxy ve VPN'lerin forumdaki herhangi bir sayfaya erişmesini
+      engelleyin.
+    Strict_Auth_Verification: Etkinleştirildiğinde, forumu görüntülemek için CAPTCHA
+      çözen ziyaretçilerin kayıt olurken veya giriş yaparken ayrı bir CAPTCHA çözmesi
+      gerekir.
+    ProxyTracer_Action: 'Proxy veya VPN algılandığında yapılacak işlem: Erişimi engelle
+      veya CAPTCHA ile sına.'
+    ProxyTracer_Captcha_Provider: Sınamalar için kullanılacak CAPTCHA hizmeti (Cloudflare
+      Turnstile veya hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Cloudflare Turnstile veya hCaptcha için genel Site
+      Anahtarınız.
+    ProxyTracer_Captcha_Secret_Key: Cloudflare Turnstile veya hCaptcha için özel Gizli
+      Anahtarınız.
+    ProxyTracer_Captcha_Clearance_hours: Bir ziyaretçinin CAPTCHA'yı başarıyla çözdükten
+      sonra Redis ve çerezlerde kaç saat doğrulanmış kalacağı.
+    Block_Message: Kullanıcı engellendiğinde gösterilen tam hata mesajı.
+    Whitelisted_IPs: ProxyTracer'ı atlamasına kesinlikle izin verilen IP adresleri
+      veya CIDR aralıkları.
+    ProxyTracer_Log_Usernames: Engellenen hesapların kullanıcı adlarını günlüğe kaydet.
+    ProxyTracer_Stats_TTL_days: Günlük istatistiklerin Redis'ten silinmeden önce saklanacağı
+      gün sayısı.
+    ProxyTracer_Show_Branding: CAPTCHA sınamalarında ve güvenlik kontrol sayfasında
+      'ProxyTracer ile Korunuyor' rozetlerini göster.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer etkin değil! Engellemeyi etkinleştirmek için lütfen eklenti ayarlarına ProxyTracer API Anahtarınızı girin."
+      proxy_tracer_missing_key: "ProxyTracer etkin değil! Proxy ve VPN engellemesini etkinleştirmek için lütfen eklenti ayarlarına ProxyTracer API Anahtarınızı girin."
+      proxy_tracer_missing_captcha_key: "ProxyTracer CAPTCHA eylemi etkinleştirildi, ancak CAPTCHA Site Anahtarı (Site Key) veya Gizli Anahtarı (Secret Key) yapılandırılmadı."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Erişim reddedildi. Bu forumda izin verilmeyen bir VPN, proxy veya Tor
+      ağı kullandığınız tespit edildi.

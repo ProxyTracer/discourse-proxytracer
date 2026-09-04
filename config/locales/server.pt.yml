@@ -1,15 +1,45 @@
 pt:
   site_settings:
-    proxytracer_enabled: "Botão principal para ativar ou desativar todo o plugin ProxyTracer."
-    ProxyTracer_API_Key: "Seu token de API que você pode obter em <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
-    API_Timeout_ms: "Quanto tempo esperar a resposta da API antes de esgotar o tempo (unidade: milissegundos)."
-    Cache_Duration_hours: "Quanto tempo lembrar de um endereço IP no Redis antes de verificar a API novamente (unidade: horas)."
-    Fail_Open_on_Error: "Se a API falhar ou esgotar o tempo, permita que o usuário se registre/faça login para evitar o bloqueio de todos."
-    Enabled_during_Signup: "Bloquear proxies e VPNs quando um novo usuário tenta se registrar."
-    Enabled_during_Login: "Bloquear proxies e VPNs quando um usuário existente tenta fazer login."
-    Enabled_for_All_Visitors: "Bloqueie proxies e VPNs de acessar ou visualizar qualquer página do fórum. (Aviso: isso verifica todos os visitantes e utiliza pesadamente sua cota de API e cache do Redis)."
-    Block_Message: "A mensagem de erro exata mostrada ao usuário quando ele é bloqueado."
-    Whitelisted_IPs: "Endereços IP ou intervalos CIDR (ex., 192.168.1.0/24) que têm permissão estrita para ignorar o ProxyTracer. Digite cada IP/intervalo e pressione Enter para adicioná-lo à lista."
+    proxytracer_enabled: Alternador principal para ativar ou desativar todo o plugin
+      ProxyTracer.
+    ProxyTracer_API_Key: Seu token de API obtido em <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a>.
+    API_Timeout_ms: 'Tempo limite de espera pela resposta da API (unidade: milissegundos).'
+    Cache_Duration_hours: Tempo em horas para reter um endereço IP no Redis antes
+      de consultar a API novamente.
+    Fail_Open_on_Error: Se a API falhar ou expirar, permitir cadastro/login para evitar
+      bloquear todos.
+    Enabled_during_Signup: Bloquear proxies e VPNs quando um novo usuário tentar se
+      cadastrar.
+    Enabled_during_Login: Bloquear proxies e VPNs quando um usuário existente tentar
+      fazer login.
+    Enabled_for_All_Visitors: Bloquear acesso de proxies e VPNs a qualquer página
+      do fórum.
+    Strict_Auth_Verification: Quando ativado, visitantes que resolveram um CAPTCHA
+      para visualizar o fórum devem resolver outro ao se cadastrar ou entrar.
+    ProxyTracer_Action: 'Ação ao detectar proxy ou VPN: Bloquear acesso ou Desafiar
+      com CAPTCHA.'
+    ProxyTracer_Captcha_Provider: O serviço de CAPTCHA a ser usado (Cloudflare Turnstile
+      ou hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Sua chave pública (Site Key) para Cloudflare Turnstile
+      ou hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: Sua chave privada (Secret Key) para Cloudflare
+      Turnstile ou hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: Quantas horas um visitante permanece verificado
+      no Redis e cookies após resolver o CAPTCHA.
+    Block_Message: A mensagem de erro exata exibida ao usuário bloqueado.
+    Whitelisted_IPs: 'Endereços IP ou faixas CIDR (ex.: 192.168.1.0/24) estritamente
+      autorizados a ignorar o ProxyTracer.'
+    ProxyTracer_Log_Usernames: Registrar nomes de usuário de contas bloqueadas.
+    ProxyTracer_Stats_TTL_days: Número de dias para reter estatísticas diárias antes
+      de expirarem do Redis.
+    ProxyTracer_Show_Branding: Exibir selos e notas de 'Protegido por ProxyTracer'
+      em desafios CAPTCHA e na página de verificação.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "O ProxyTracer está inativo! Insira sua chave de API ProxyTracer nas configurações do plugin para ativar o bloqueio."
+      proxy_tracer_missing_key: "ProxyTracer está inativo! Insira sua chave de API do ProxyTracer nas configurações do plugin."
+      proxy_tracer_missing_captcha_key: "A ação CAPTCHA do ProxyTracer está ativada, mas a Site Key ou a Secret Key do CAPTCHA não foram configuradas."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Acesso negado. Detectamos o uso de VPN, proxy ou rede Tor, o que não
+      é permitido neste fórum.

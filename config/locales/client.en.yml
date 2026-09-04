@@ -1,0 +1,18 @@
+en:
+  js:
+    proxytracer:
+      admin_title: "ProxyTracer"
+      admin:
+        tabs:
+          stats: "Statistics"
+          logs: "Blocked Logs"
+        stats:
+          title: "ProxyTracer Traffic & Detections (Last 30 Days)"
+          empty: "No traffic recorded yet."
+        logs:
+          title: "Recent Blocked Requests (Last 500)"
+          timestamp: "Time"
+          ip: "IP Address"
+          username: "Username"
+          action: "Action"
+          empty: "No blocked requests recorded yet."

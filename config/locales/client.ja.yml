@@ -1,0 +1,18 @@
+ja:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: 統計情報
+          logs: ブロックログ
+        stats:
+          title: ProxyTracer トラフィックと検出（過去 30 日間）
+          empty: 記録されたトラフィックはまだありません。
+        logs:
+          title: 最近ブロックされたリクエスト（最新 500 件）
+          timestamp: 日時
+          ip: IP アドレス
+          username: ユーザー名
+          action: アクション
+          empty: ブロックされたリクエストはまだありません。

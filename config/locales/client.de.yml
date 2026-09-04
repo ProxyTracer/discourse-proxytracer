@@ -1,0 +1,18 @@
+de:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: Statistiken
+          logs: Blockierte Anfragen
+        stats:
+          title: ProxyTracer-Verkehr & Erkennungen (Letzte 30 Tage)
+          empty: Bisher kein Datenverkehr erfasst.
+        logs:
+          title: Kürzlich blockierte Anfragen (Letzte 500)
+          timestamp: Zeit
+          ip: IP-Adresse
+          username: Benutzername
+          action: Aktion
+          empty: Bisher keine blockierten Anfragen erfasst.

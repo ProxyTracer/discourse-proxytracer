@@ -1,0 +1,18 @@
+ar:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: الإحصائيات
+          logs: سجلات الحظر
+        stats:
+          title: حركة المرور واكتشافات ProxyTracer (آخر 30 يومًا)
+          empty: لم يتم تسجيل أي حركة مرور بعد.
+        logs:
+          title: الطلبات المحظورة مؤخرًا (آخر 500)
+          timestamp: الوقت
+          ip: عنوان IP
+          username: اسم المستخدم
+          action: الإجراء
+          empty: لا توجد طلبات محظورة مسجلة بعد.

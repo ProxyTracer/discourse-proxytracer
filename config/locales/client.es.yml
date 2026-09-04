@@ -1,0 +1,18 @@
+es:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: Estadísticas
+          logs: Registros de Bloqueos
+        stats:
+          title: Tráfico y Detecciones de ProxyTracer (Últimos 30 días)
+          empty: Aún no se ha registrado tráfico.
+        logs:
+          title: Solicitudes Bloqueadas Recientes (Últimas 500)
+          timestamp: Hora
+          ip: Dirección IP
+          username: Nombre de usuario
+          action: Acción
+          empty: Aún no hay solicitudes bloqueadas registradas.

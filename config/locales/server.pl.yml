@@ -1,15 +1,43 @@
 pl:
   site_settings:
-    proxytracer_enabled: "Główny przełącznik do włączania lub wyłączania całej wtyczki ProxyTracer."
-    ProxyTracer_API_Key: "Twój token API, który możesz uzyskać z <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
-    API_Timeout_ms: "Czas oczekiwania na odpowiedź API przed upływem limitu czasu (jednostka: milisekundy)."
-    Cache_Duration_hours: "Czas przechowywania adresu IP w Redis przed ponownym sprawdzeniem API (jednostka: godziny)."
-    Fail_Open_on_Error: "Jeśli API ulegnie awarii lub przekroczy limit czasu, pozwól użytkownikowi na rejestrację/logowanie, aby zapobiec zablokowaniu wszystkich."
-    Enabled_during_Signup: "Blokuj proxy i VPN, gdy nowy użytkownik próbuje się zarejestrować."
-    Enabled_during_Login: "Blokuj proxy i VPN, gdy istniejący użytkownik próbuje się zalogować."
-    Enabled_for_All_Visitors: "Zablokuj serwerom proxy i VPN możliwość dostępu lub przeglądania jakiejkolwiek strony na forum. (Ostrzeżenie: to sprawdza każdego odwiedzającego i mocno obciąża Twój limit API oraz pamięć podręczną Redis)."
-    Block_Message: "Dokładny komunikat o błędzie wyświetlany użytkownikowi po zablokowaniu."
-    Whitelisted_IPs: "Adresy IP lub zakresy CIDR (np. 192.168.1.0/24), które mają bezwzględne zezwolenie na ominięcie ProxyTracer. Wpisz każdy adres IP/zakres i naciśnij Enter, aby dodać go do listy."
+    proxytracer_enabled: Główny przełącznik do włączania lub wyłączania wtyczki ProxyTracer.
+    ProxyTracer_API_Key: Twój token API, który możesz pobrać z <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a>.
+    API_Timeout_ms: Czas oczekiwania na odpowiedź API przed upływem limitu czasu (w
+      milisekundach).
+    Cache_Duration_hours: Jak długo (w godzinach) pamiętać adres IP w Redis przed
+      ponownym sprawdzeniem.
+    Fail_Open_on_Error: W przypadku awarii API zezwól na rejestrację/logowanie, aby
+      zapobiec zablokowaniu dostępu.
+    Enabled_during_Signup: Blokuj proxy i VPN podczas próby rejestracji nowego użytkownika.
+    Enabled_during_Login: Blokuj proxy i VPN podczas próby logowania istniejącego
+      użytkownika.
+    Enabled_for_All_Visitors: Blokuj proxy i VPN przed dostępem do jakichkolwiek stron
+      forum.
+    Strict_Auth_Verification: Po włączeniu goście, którzy rozwiązali CAPTCHA, aby
+      przeglądać forum, muszą rozwiązać oddzielne CAPTCHA przy logowaniu lub rejestracji.
+    ProxyTracer_Action: 'Działanie po wykryciu proxy lub VPN: Blokuj dostęp lub Wyświetl
+      CAPTCHA.'
+    ProxyTracer_Captcha_Provider: Usługa CAPTCHA do weryfikacji (Cloudflare Turnstile
+      lub hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Twój publiczny klucz witryny dla Cloudflare Turnstile
+      lub hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: Twój prywatny klucz tajny dla Cloudflare Turnstile
+      lub hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: Ile godzin użytkownik pozostaje zweryfikowany
+      w Redis i plikach cookie po rozwiązaniu CAPTCHA.
+    Block_Message: Dokładny komunikat o błędzie wyświetlany zablokowanemu użytkownikowi.
+    Whitelisted_IPs: Adresy IP lub zakresy CIDR (np. 192.168.1.0/24), które mogą omijać
+      ProxyTracer.
+    ProxyTracer_Log_Usernames: Zapisuj nazwy zablokowanych użytkowników.
+    ProxyTracer_Stats_TTL_days: Liczba dni przechowywania dziennych statystyk w Redis.
+    ProxyTracer_Show_Branding: Wyświetlaj oznaczenia 'Chronione przez ProxyTracer'
+      na CAPTCHA i stronie sprawdzania.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer jest nieaktywny! Wprowadź swój klucz API ProxyTracer w ustawieniach wtyczki, aby włączyć blokowanie serwerów proxy i VPN."
+      proxy_tracer_missing_key: "ProxyTracer jest nieaktywny! Wprowadź klucz API ProxyTracer w ustawieniach wtyczki."
+      proxy_tracer_missing_captcha_key: "Akcja CAPTCHA w ProxyTracer jest włączona, ale klucz witryny (Site Key) lub klucz tajny (Secret Key) CAPTCHA nie zostały skonfigurowane."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Dostęp zabroniony. Wykryto korzystanie z sieci VPN, proxy lub Tor,
+      co jest zabronione na tym forum.

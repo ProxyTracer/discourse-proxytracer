@@ -1,15 +1,38 @@
 ar:
   site_settings:
-    proxytracer_enabled: "المفتاح الرئيسي لتمكين أو تعطيل إضافة ProxyTracer بالكامل."
-    ProxyTracer_API_Key: "رمز API الخاص بك الذي يمكنك الحصول عليه من <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
-    API_Timeout_ms: "المدة التي يجب انتظارها لاستجابة API قبل انتهاء المهلة (الوحدة: مللي ثانية)."
-    Cache_Duration_hours: "المدة التي يجب أن يتذكر فيها عنوان IP في Redis قبل التحقق من API مرة أخرى (الوحدة: ساعات)."
-    Fail_Open_on_Error: "إذا تعطلت واجهة برمجة التطبيقات أو انتهت مهلتها، اسمح للمستخدم بالتسجيل/تسجيل الدخول على أي حال لمنع حظر الجميع."
-    Enabled_during_Signup: "حظر الوكلاء (Proxies) وشبكات VPN عندما يحاول مستخدم جديد التسجيل."
-    Enabled_during_Login: "حظر الوكلاء (Proxies) وشبكات VPN عندما يحاول مستخدم حالي تسجيل الدخول."
-    Enabled_for_All_Visitors: "حظر الوكلاء (Proxies) وشبكات VPN من الوصول إلى أي صفحة في المنتدى أو عرضها. (تحذير: يتحقق هذا من كل زائر ويستهلك بشكل كبير حصة API الخاصة بك وذاكرة تخزين Redis)."
-    Block_Message: "رسالة الخطأ الدقيقة التي تظهر للمستخدم عند حظره."
-    Whitelisted_IPs: "عناوين IP أو نطاقات CIDR (مثل 192.168.1.0/24) المسموح لها تمامًا بتجاوز ProxyTracer. اكتب كل عنوان IP/نطاق واضغط على Enter لإضافته إلى القائمة."
+    proxytracer_enabled: المفتاح الرئيسي لتفعيل أو تعطيل إضافة ProxyTracer بالكامل.
+    ProxyTracer_API_Key: رمز API الخاص بك الذي يمكنك الحصول عليه من <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a>.
+    API_Timeout_ms: المدة الزمنية لانتظار استجابة API قبل انتهاء المهلة (بالمللي ثانية).
+    Cache_Duration_hours: عدد الساعات للاحتفاظ بعنوان IP في Redis قبل إعادة فحص API.
+    Fail_Open_on_Error: في حال تعطل API أو انتهاء المهلة، اسمح بالتسجيل/تسجيل الدخول
+      لتجنب قفل الموقع على الجميع.
+    Enabled_during_Signup: حظر البروكسي و VPN عند محاولة مستخدم جديد التسجيل.
+    Enabled_during_Login: حظر البروكسي و VPN عند محاولة مستخدم حالي تسجيل الدخول.
+    Enabled_for_All_Visitors: حظر البروكسي و VPN من الوصول إلى أي صفحة في المنتدى.
+    Strict_Auth_Verification: عند التفعيل، يجب على الزوار الذين حلوا كابتشا لعرض المنتدى
+      حل كابتشا منفصلة عند التسجيل أو تسجيل الدخول.
+    ProxyTracer_Action: 'الإجراء المتخذ عند اكتشاف بروكسي أو VPN: حظر الوصول أو التحدي
+      بواسطة CAPTCHA.'
+    ProxyTracer_Captcha_Provider: خدمة CAPTCHA المستخدمة للتحديات (Cloudflare Turnstile
+      أو hCaptcha).
+    ProxyTracer_Captcha_Site_Key: مفتاح الموقع العام (Site Key) لـ Cloudflare Turnstile
+      أو hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: المفتاح السري الخاص لـ Cloudflare Turnstile أو
+      hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: عدد الساعات التي يظل فيها الزائر معتمدًا
+      في Redis وملفات تعريف الارتباط بعد حل الكابتشا بنجاح.
+    Block_Message: رسالة الخطأ الدقيقة المعروضة للمستخدم عند حظره.
+    Whitelisted_IPs: عناوين IP أو نطاقات CIDR المسموح لها بتجاوز ProxyTracer.
+    ProxyTracer_Log_Usernames: تسجيل أسماء المستخدمين للحسابات المحظورة.
+    ProxyTracer_Stats_TTL_days: عدد الأيام للاحتفاظ بالإحصاءات اليومية في Redis.
+    ProxyTracer_Show_Branding: عرض شارة 'محمي بواسطة ProxyTracer' في تحديات الكابتشا
+      وصفحة التحقق الأمنية.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer غير نشط! يرجى إدخال مفتاح ProxyTracer API الخاص بك في إعدادات المكون الإضافي لتمكين الحظر."
+      proxy_tracer_missing_key: "ProxyTracer غير نشط! يرجى إدخال مفتاح API الخاص بك في إعدادات الإضافة لتمكين الحظر."
+      proxy_tracer_missing_captcha_key: "تم تفعيل إجراء CAPTCHA في ProxyTracer، ولكن لم يتم تكوين مفتاح الموقع (Site Key) أو المفتاح السري (Secret Key) لـ CAPTCHA."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: تم رفض الوصول. لقد اكتشفنا أنك تستخدم VPN أو بروكسي أو شبكة Tor، وهو
+      أمر غير مسموح به في هذا المنتدى.

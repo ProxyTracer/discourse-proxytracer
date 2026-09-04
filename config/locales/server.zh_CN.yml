@@ -1,15 +1,30 @@
 zh_CN:
   site_settings:
-    proxytracer_enabled: "启用或禁用整个 ProxyTracer 插件的主开关。"
-    ProxyTracer_API_Key: "您可以从 <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> 获取您的 API 令牌。"
-    API_Timeout_ms: "在超时之前等待 API 响应的时间（单位：毫秒）。"
-    Cache_Duration_hours: "在再次检查 API 之前，在 Redis 中记住 IP 地址多长时间（单位：小时）。"
-    Fail_Open_on_Error: "如果 API 崩溃或超时，允许用户继续注册/登录，以防将所有人锁定。"
-    Enabled_during_Signup: "当新用户尝试注册时阻止代理和 VPN。"
-    Enabled_during_Login: "当现有用户尝试登录时阻止代理和 VPN。"
-    Enabled_for_All_Visitors: "阻止代理和 VPN 访问或查看论坛上的任何页面。（警告：这会检查每位访问者，并大量使用您的 API 配额和 Redis 缓存）。"
-    Block_Message: "用户被阻止时显示的确切错误消息。"
-    Whitelisted_IPs: "严格允许绕过 ProxyTracer 的 IP 地址或 CIDR 范围（例如 192.168.1.0/24）。输入每个 IP/范围并按 Enter 键将其添加到列表中。"
+    proxytracer_enabled: 启用或禁用整个 ProxyTracer 插件的总开关。
+    ProxyTracer_API_Key: 您从 <a href="https://proxytracer.com/dashboard" target="_blank">proxytracer.com</a>
+      获取的 API 令牌。
+    API_Timeout_ms: 等待 API 响应的超时时间（单位：毫秒）。
+    Cache_Duration_hours: 在 Redis 中缓存 IP 地址结果的小时数。
+    Fail_Open_on_Error: 如果 API 故障或超时，仍允许注册/登录以防止误锁正常用户。
+    Enabled_during_Signup: 新用户注册时拦截代理和 VPN。
+    Enabled_during_Login: 现有用户登录时拦截代理和 VPN。
+    Enabled_for_All_Visitors: 拦截代理和 VPN 访问论坛的任何页面。
+    Strict_Auth_Verification: 启用后，通过验证码浏览论坛的访客在注册或登录时仍需完成单独的验证码验证。
+    ProxyTracer_Action: 检测到代理或 VPN 时的处理方式：直接阻止访问或进行 CAPTCHA 人机验证。
+    ProxyTracer_Captcha_Provider: 用于人机验证的服务商（Cloudflare Turnstile 或 hCaptcha）。
+    ProxyTracer_Captcha_Site_Key: Cloudflare Turnstile 或 hCaptcha 的公共站点密钥 (Site Key)。
+    ProxyTracer_Captcha_Secret_Key: Cloudflare Turnstile 或 hCaptcha 的私有密钥 (Secret
+      Key)。
+    ProxyTracer_Captcha_Clearance_hours: 访客成功完成人机验证后，在 Redis 和 Cookie 中保持放行状态的小时数。
+    Block_Message: 用户被阻止时显示的具体错误提示信息。
+    Whitelisted_IPs: 允许直接绕过 ProxyTracer 的白名单 IP 地址或 CIDR 范围（例如 192.168.1.0/24）。
+    ProxyTracer_Log_Usernames: 记录被拦截账户的用户名。
+    ProxyTracer_Stats_TTL_days: 每日统计数据在 Redis 中的保留天数。
+    ProxyTracer_Show_Branding: 在人机验证和安全检查页面上显示“Protected by ProxyTracer”品牌徽章。
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer 处于非活动状态！请在插件设置中输入您的 ProxyTracer API 密钥以启用阻止功能。"
+      proxy_tracer_missing_key: "ProxyTracer 未处于活动状态！请在插件设置中输入您的 ProxyTracer API 密钥。"
+      proxy_tracer_missing_captcha_key: "ProxyTracer 验证码（CAPTCHA）操作已启用，但尚未配置验证码的 Site Key 或 Secret Key。"
+  proxytracer:
+    admin_title: "ProxyTracer"
+    error_451: "访问被拒绝。我们检测到您正在使用本论坛不允许的 VPN、代理或 Tor 网络。"

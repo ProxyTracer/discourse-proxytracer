@@ -8,8 +8,21 @@ en:
     Enabled_during_Signup: "Block proxies and VPNs when a new user attempts to register."
     Enabled_during_Login: "Block proxies and VPNs when an existing user attempts to log in."
     Enabled_for_All_Visitors: "Block proxies and VPNs from accessing or viewing any page on the forum. (Warning: This checks every visitor and heavily utilizes your API quota and Redis cache)."
+    Strict_Auth_Verification: "When enabled, visitors who solved a CAPTCHA to view the forum must still solve a separate CAPTCHA when registering or logging in. When disabled, solving the CAPTCHA once grants full clearance for visiting, login, and signup."
+    ProxyTracer_Action: "Action to take when a proxy or VPN is detected: Block access or Challenge with CAPTCHA."
+    ProxyTracer_Captcha_Provider: "The CAPTCHA service to use for challenges (Cloudflare Turnstile or hCaptcha)."
+    ProxyTracer_Captcha_Site_Key: "Your public Site Key for Cloudflare Turnstile or hCaptcha."
+    ProxyTracer_Captcha_Secret_Key: "Your private Secret Key for Cloudflare Turnstile or hCaptcha."
+    ProxyTracer_Captcha_Clearance_hours: "How many hours a visitor remains verified in Redis and cookies after successfully solving a CAPTCHA."
     Block_Message: "The exact error message shown to the user when they are blocked."
     Whitelisted_IPs: "IP addresses or CIDR ranges (e.g., 192.168.1.0/24) that are strictly allowed to bypass ProxyTracer. Type each IP/range and press Enter to add it to the list."
+    ProxyTracer_Log_Usernames: "Log the usernames of blocked accounts. If disabled, logs will still be kept for statistics, but usernames will be omitted."
+    ProxyTracer_Stats_TTL_days: "Number of days to retain daily statistics before they expire from Redis."
+    ProxyTracer_Show_Branding: "Display 'Protected by ProxyTracer' branding badges and notes on CAPTCHA challenges and the security checkpoint page."
   dashboard:
     problem:
       proxy_tracer_missing_key: "ProxyTracer is inactive! Please enter your ProxyTracer API Key in the plugin settings to enable proxy and VPN blocking."
+      proxy_tracer_missing_captcha_key: "ProxyTracer CAPTCHA action is enabled, but the CAPTCHA Site Key or Secret Key is not configured."
+  proxytracer:
+    admin_title: "ProxyTracer"
+    error_451: "Access denied. We have detected that you are using a VPN, proxy, or Tor network, which is not permitted on this forum. Please disable it and try again."

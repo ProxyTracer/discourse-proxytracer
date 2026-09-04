@@ -1,0 +1,18 @@
+pl:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: Statystyki
+          logs: Dziennik Blokad
+        stats:
+          title: Ruch i Wykrycia ProxyTracer (Ostatnie 30 Dni)
+          empty: Brak zarejestrowanego ruchu.
+        logs:
+          title: Ostatnio Zablokowane Żądania (Ostatnie 500)
+          timestamp: Czas
+          ip: Adres IP
+          username: Nazwa użytkownika
+          action: Akcja
+          empty: Brak zarejestrowanych zablokowanych żądań.

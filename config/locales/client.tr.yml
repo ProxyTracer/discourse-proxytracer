@@ -1,0 +1,18 @@
+tr:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: İstatistikler
+          logs: Engelleme Günlükleri
+        stats:
+          title: ProxyTracer Trafiği ve Algılamaları (Son 30 Gün)
+          empty: Henüz trafik kaydedilmedi.
+        logs:
+          title: Son Engellenen İstekler (Son 500)
+          timestamp: Zaman
+          ip: IP Adresi
+          username: Kullanıcı Adı
+          action: İşlem
+          empty: Henüz engellenen istek kaydedilmedi.

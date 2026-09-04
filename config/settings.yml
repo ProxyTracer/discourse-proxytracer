@@ -5,6 +5,7 @@ plugins:
   ProxyTracer_API_Key:
     default: ''
     client: false
+    secret: true
   API_Timeout_ms:
     default: 3000
     client: false
@@ -18,11 +19,47 @@ plugins:
     default: true
     client: false
   Enabled_during_Login:
-    default: false
+    default: true
     client: false
   Enabled_for_All_Visitors:
     default: false
     client: false
+  Strict_Auth_Verification:
+    default: false
+    client: false
+  ProxyTracer_Action:
+    default: 'block'
+    type: enum
+    choices:
+      - 'block'
+      - 'captcha'
+    client: true
+  ProxyTracer_Captcha_Provider:
+    default: 'turnstile'
+    type: enum
+    choices:
+      - 'turnstile'
+      - 'hcaptcha'
+    client: true
+  ProxyTracer_Captcha_Site_Key:
+    default: ''
+    client: true
+  ProxyTracer_Captcha_Secret_Key:
+    default: ''
+    client: false
+    secret: true
+  ProxyTracer_Captcha_Clearance_hours:
+    default: 24
+    client: false
+  ProxyTracer_Log_Usernames:
+    default: false
+    client: false
+  ProxyTracer_Stats_TTL_days:
+    default: 365
+    client: false
+  ProxyTracer_Show_Branding:
+    default: true
+    client: true
   Whitelisted_IPs:
     default: ''
     type: list

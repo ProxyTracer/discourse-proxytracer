@@ -1,15 +1,30 @@
 ja:
   site_settings:
-    proxytracer_enabled: "ProxyTracer プラグイン全体を有効または無効にするマスタートグル。"
-    ProxyTracer_API_Key: "<a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> から取得できるAPIトークン。"
-    API_Timeout_ms: "タイムアウトする前にAPIの応答を待つ時間（単位：ミリ秒）。"
-    Cache_Duration_hours: "APIを再確認する前にIPアドレスをRedisに記憶しておく時間（単位：時間）。"
-    Fail_Open_on_Error: "APIがクラッシュまたはタイムアウトした場合でも、全員がロックアウトされるのを防ぐために、ユーザーの登録/ログインを許可します。"
-    Enabled_during_Signup: "新規ユーザーが登録を試みたときにプロキシとVPNをブロックします。"
-    Enabled_during_Login: "既存のユーザーがログインを試みたときにプロキシとVPNをブロックします。"
-    Enabled_for_All_Visitors: "プロキシと VPN がフォーラムのページにアクセスまたは表示するのをブロックします。（警告：これはすべての訪問者をチェックし、API クォータと Redis キャッシュを大量に消費します）。"
-    Block_Message: "ブロックされたときにユーザーに表示される正確なエラーメッセージ。"
-    Whitelisted_IPs: "ProxyTracer のバイパスを厳密に許可された IP アドレスまたは CIDR 範囲（例：192.168.1.0/24）。各 IP/範囲を入力し、Enter キーを押してリストに追加します。"
+    proxytracer_enabled: ProxyTracer プラグイン全体を有効または無効にするマスター切り替え。
+    ProxyTracer_API_Key: <a href="https://proxytracer.com/dashboard" target="_blank">proxytracer.com</a>
+      から取得できる API トークン。
+    API_Timeout_ms: API の応答を待機するタイムアウト時間（ミリ秒単位）。
+    Cache_Duration_hours: API を再確認する前に IP アドレスを Redis に保持する時間（時間単位）。
+    Fail_Open_on_Error: API エラーまたはタイムアウト時に、アクセス遮断を防ぐため登録/ログインを許可する。
+    Enabled_during_Signup: 新規ユーザー登録時にプロキシおよび VPN をブロックします。
+    Enabled_during_Login: 既存ユーザーログイン時にプロキシおよび VPN をブロックします。
+    Enabled_for_All_Visitors: フォーラムの全ページでプロキシや VPN からのアクセスをブロックします。
+    Strict_Auth_Verification: 有効にすると、閲覧時に CAPTCHA を通過した訪問者も、登録やログイン時に個別の CAPTCHA を解く必要があります。
+    ProxyTracer_Action: 'プロキシまたは VPN 検出時のアクション: アクセスを拒否するか、CAPTCHA で検証するか。'
+    ProxyTracer_Captcha_Provider: 検証に使用する CAPTCHA サービス（Cloudflare Turnstile または hCaptcha）。
+    ProxyTracer_Captcha_Site_Key: Cloudflare Turnstile または hCaptcha の公開サイトキー。
+    ProxyTracer_Captcha_Secret_Key: Cloudflare Turnstile または hCaptcha の秘密キー。
+    ProxyTracer_Captcha_Clearance_hours: CAPTCHA をクリアした後、訪問者が検証済みとして維持される時間（時間単位）。
+    Block_Message: ブロックされたユーザーに表示されるエラーメッセージ。
+    Whitelisted_IPs: ProxyTracer をバイパスすることが許可されたホワイトリスト IP または CIDR 範囲。
+    ProxyTracer_Log_Usernames: ブロックされたアカウントのユーザー名を記録します。
+    ProxyTracer_Stats_TTL_days: 日次統計が Redis から期限切れになるまでの保持日数。
+    ProxyTracer_Show_Branding: CAPTCHA 画面およびセキュリティチェックポイントに 'Protected by ProxyTracer'
+      の表記を表示します。
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracerは非アクティブです！ブロックを有効にするには、プラグイン設定にProxyTracer APIキーを入力してください。"
+      proxy_tracer_missing_key: "ProxyTracer は無効です！プロキシおよび VPN のブロックを有効にするには、プラグイン設定で API キーを入力してください。"
+      proxy_tracer_missing_captcha_key: "ProxyTracerのCAPTCHAアクションが有効になっていますが、CAPTCHAのサイトキー（Site Key）またはシークレットキー（Secret Key）が設定されていません。"
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: アクセスが拒否されました。このフォーラムで許可されていない VPN、プロキシ、または Tor ネットワークの使用が検出されました。

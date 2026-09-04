@@ -1,0 +1,18 @@
+bn:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: পরিসংখ্যান
+          logs: ব্লক করা লগ
+        stats:
+          title: ProxyTracer ট্র্যাফিক এবং সনাক্তকরণ (গত ৩০ দিন)
+          empty: এখনও কোনো ট্র্যাফিক রেকর্ড করা হয়নি।
+        logs:
+          title: সম্প্রতি ব্লক করা অনুরোধ (সর্বশেষ ৫০০)
+          timestamp: সময়
+          ip: আইপি ঠিকানা
+          username: ব্যবহারকারীর নাম
+          action: অ্যাকশন
+          empty: এখনও কোনো ব্লক করা অনুরোধ রেকর্ড করা হয়নি।

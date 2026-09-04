@@ -1,0 +1,18 @@
+hi:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: आँकड़े
+          logs: ब्लॉक किए गए लॉग
+        stats:
+          title: ProxyTracer ट्रैफ़िक और पहचान (पिछले 30 दिन)
+          empty: अभी तक कोई ट्रैफ़िक दर्ज नहीं किया गया है।
+        logs:
+          title: हाल के ब्लॉक किए गए अनुरोध (अंतिम 500)
+          timestamp: समय
+          ip: IP पता
+          username: उपयोगकर्ता नाम
+          action: कार्रवाई
+          empty: अभी तक कोई ब्लॉक किया गया अनुरोध दर्ज नहीं किया गया है।

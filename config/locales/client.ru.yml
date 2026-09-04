@@ -1,0 +1,18 @@
+ru:
+  js:
+    proxytracer:
+      admin_title: ProxyTracer
+      admin:
+        tabs:
+          stats: Статистика
+          logs: Журнал Блокировок
+        stats:
+          title: Трафик и обнаружения ProxyTracer (за последние 30 дней)
+          empty: Трафик пока не зафиксирован.
+        logs:
+          title: Недавние заблокированные запросы (последние 500)
+          timestamp: Время
+          ip: IP-адрес
+          username: Имя пользователя
+          action: Действие
+          empty: Заблокированных запросов пока нет.

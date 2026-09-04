@@ -1,15 +1,50 @@
 de:
   site_settings:
-    proxytracer_enabled: "Hauptschalter zum Aktivieren oder Deaktivieren des gesamten ProxyTracer-Plugins."
-    ProxyTracer_API_Key: "Ihr API-Token, das Sie von <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a> erhalten können."
-    API_Timeout_ms: "Wie lange auf die Antwort der API gewartet werden soll, bevor eine Zeitüberschreitung auftritt (Einheit: Millisekunden)."
-    Cache_Duration_hours: "Wie lange eine IP-Adresse in Redis gespeichert werden soll, bevor die API erneut überprüft wird (Einheit: Stunden)."
-    Fail_Open_on_Error: "Wenn die API abstürzt oder eine Zeitüberschreitung auftritt, darf sich der Benutzer trotzdem registrieren/anmelden, um nicht alle auszusperren."
-    Enabled_during_Signup: "Proxys und VPNs blockieren, wenn ein neuer Benutzer versucht, sich zu registrieren."
-    Enabled_during_Login: "Proxys und VPNs blockieren, wenn ein bestehender Benutzer versucht, sich anzumelden."
-    Enabled_for_All_Visitors: "Proxys und VPNs den Zugriff auf alle Seiten des Forums verwehren. (Warnung: Dies überprüft jeden Besucher und beansprucht Ihr API-Kontingent und den Redis-Cache stark)."
-    Block_Message: "Die genaue Fehlermeldung, die dem Benutzer angezeigt wird, wenn er blockiert wird."
-    Whitelisted_IPs: "IP-Adressen oder CIDR-Bereiche (z. B. 192.168.1.0/24), die ProxyTracer strikt umgehen dürfen. Geben Sie jede(n) IP/Bereich ein und drücken Sie die Eingabetaste, um sie zur Liste hinzuzufügen."
+    proxytracer_enabled: Hauptschalter zum Aktivieren oder Deaktivieren des gesamten
+      ProxyTracer-Plugins.
+    ProxyTracer_API_Key: Ihr API-Token, das Sie unter <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a> erhalten.
+    API_Timeout_ms: 'Wie lange auf die Antwort der API gewartet werden soll, bevor
+      ein Timeout eintritt (Einheit: Millisekunden).'
+    Cache_Duration_hours: Wie viele Stunden eine IP-Adresse in Redis zwischengespeichert
+      werden soll, bevor die API erneut abgefragt wird.
+    Fail_Open_on_Error: Wenn die API fehlschlägt oder ein Timeout auftritt, die Registrierung/Anmeldung
+      dennoch zulassen, um Aussperrungen zu verhindern.
+    Enabled_during_Signup: Proxys und VPNs blockieren, wenn ein neuer Benutzer versucht,
+      sich zu registrieren.
+    Enabled_during_Login: Proxys und VPNs blockieren, wenn ein bestehender Benutzer
+      versucht, sich anzumelden.
+    Enabled_for_All_Visitors: 'Proxys und VPNs den Zugriff auf alle Seiten des Forums
+      verwehren. (Warnung: Überprüft jeden Besucher und verbraucht viel API-Kontingent
+      und Redis-Cache).'
+    Strict_Auth_Verification: Wenn aktiviert, müssen Besucher, die ein CAPTCHA gelöst
+      haben, um das Forum anzuzeigen, bei Registrierung oder Anmeldung ein separates
+      CAPTCHA lösen.
+    ProxyTracer_Action: 'Aktion bei Erkennung eines Proxys oder VPNs: Zugriff blockieren
+      oder mit CAPTCHA herausfordern.'
+    ProxyTracer_Captcha_Provider: Der für Herausforderungen zu verwendende CAPTCHA-Dienst
+      (Cloudflare Turnstile oder hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Ihr öffentlicher Site-Key für Cloudflare Turnstile
+      oder hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: Ihr privater Secret-Key für Cloudflare Turnstile
+      oder hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: Wie viele Stunden ein Besucher in Redis und
+      Cookies nach erfolgreichem Lösen eines CAPTCHAs verifiziert bleibt.
+    Block_Message: Die genaue Fehlermeldung, die dem Benutzer beim Blockieren angezeigt
+      wird.
+    Whitelisted_IPs: IP-Adressen oder CIDR-Bereiche (z. B. 192.168.1.0/24), die ProxyTracer
+      umgehen dürfen.
+    ProxyTracer_Log_Usernames: Benutzernamen blockierter Konten protokollieren. Wenn
+      deaktiviert, werden Protokolle für Statistiken geführt, aber Benutzernamen weggelassen.
+    ProxyTracer_Stats_TTL_days: Anzahl der Tage, die tägliche Statistiken in Redis
+      aufbewahrt werden.
+    ProxyTracer_Show_Branding: '''Geschützt durch ProxyTracer''-Branding-Abzeichen
+      und Hinweise bei CAPTCHA-Herausforderungen und Kontrollseiten anzeigen.'
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer ist inaktiv! Bitte geben Sie Ihren ProxyTracer API-Schlüssel in den Plugin-Einstellungen ein, um die Blockierung zu aktivieren."
+      proxy_tracer_missing_key: "ProxyTracer ist inaktiv! Bitte geben Sie Ihren ProxyTracer-API-Schlüssel in den Plugin-Einstellungen ein."
+      proxy_tracer_missing_captcha_key: "Die ProxyTracer-CAPTCHA-Aktion ist aktiviert, aber der CAPTCHA-Site-Key oder Secret-Key ist nicht konfiguriert."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Zugriff verweigert. Wir haben festgestellt, dass Sie ein VPN, einen
+      Proxy oder das Tor-Netzwerk verwenden, was in diesem Forum nicht gestattet ist.

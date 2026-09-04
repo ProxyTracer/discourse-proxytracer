@@ -1,15 +1,45 @@
 ru:
   site_settings:
-    proxytracer_enabled: "Главный переключатель для включения или отключения всего плагина ProxyTracer."
-    ProxyTracer_API_Key: "Ваш токен API, который можно получить на <a href=\"https://proxytracer.com/dashboard\" target=\"_blank\">proxytracer.com</a>."
-    API_Timeout_ms: "Сколько времени ждать ответа от API до тайм-аута (единица измерения: миллисекунды)."
-    Cache_Duration_hours: "Сколько времени хранить IP-адрес в Redis перед повторной проверкой API (единица измерения: часы)."
-    Fail_Open_on_Error: "Если API дает сбой или истекает время ожидания, разрешить пользователю регистрироваться/входить в систему, чтобы не заблокировать всех."
-    Enabled_during_Signup: "Блокировать прокси и VPN при попытке регистрации нового пользователя."
-    Enabled_during_Login: "Блокировать прокси и VPN при попытке входа существующего пользователя."
-    Enabled_for_All_Visitors: "Блокировать доступ или просмотр любых страниц форума через прокси и VPN. (Внимание: это проверяет каждого посетителя и сильно расходует вашу квоту API и кэш Redis)."
-    Block_Message: "Точное сообщение об ошибке, показываемое пользователю при блокировке."
-    Whitelisted_IPs: "IP-адреса или диапазоны CIDR (например, 192.168.1.0/24), которым строго разрешено обходить ProxyTracer. Введите каждый IP-адрес/диапазон и нажмите Enter, чтобы добавить его в список."
+    proxytracer_enabled: Главный переключатель для включения или отключения плагина
+      ProxyTracer.
+    ProxyTracer_API_Key: Ваш API-токен, который можно получить на <a href="https://proxytracer.com/dashboard"
+      target="_blank">proxytracer.com</a>.
+    API_Timeout_ms: Время ожидания ответа API до истечения тайм-аута (в миллисекундах).
+    Cache_Duration_hours: Сколько часов хранить IP-адрес в Redis перед повторным запросом
+      к API.
+    Fail_Open_on_Error: В случае сбоя или тайм-аута API разрешить регистрацию/вход,
+      чтобы не заблокировать пользователей.
+    Enabled_during_Signup: Блокировать прокси и VPN при попытке регистрации нового
+      пользователя.
+    Enabled_during_Login: Блокировать прокси и VPN при попытке входа существующего
+      пользователя.
+    Enabled_for_All_Visitors: Блокировать доступ через прокси и VPN ко всем страницам
+      форума.
+    Strict_Auth_Verification: Если включено, посетители, прошедшие CAPTCHA для просмотра
+      форума, должны пройти отдельную проверку при регистрации или входе.
+    ProxyTracer_Action: 'Действие при обнаружении прокси или VPN: Блокировать доступ
+      или Запросить CAPTCHA.'
+    ProxyTracer_Captcha_Provider: Сервис CAPTCHA для проверки (Cloudflare Turnstile
+      или hCaptcha).
+    ProxyTracer_Captcha_Site_Key: Ваш публичный ключ сайта (Site Key) для Cloudflare
+      Turnstile или hCaptcha.
+    ProxyTracer_Captcha_Secret_Key: Ваш секретный ключ (Secret Key) для Cloudflare
+      Turnstile или hCaptcha.
+    ProxyTracer_Captcha_Clearance_hours: Количество часов, в течение которых посетитель
+      остается верифицированным в Redis и cookies.
+    Block_Message: Точное сообщение об ошибке, отображаемое пользователю при блокировке.
+    Whitelisted_IPs: IP-адреса или диапазоны CIDR (например, 192.168.1.0/24), которым
+      разрешено обходить ProxyTracer.
+    ProxyTracer_Log_Usernames: Записывать имена пользователей заблокированных аккаунтов.
+    ProxyTracer_Stats_TTL_days: Количество дней хранения ежедневной статистики в Redis
+      до удаления.
+    ProxyTracer_Show_Branding: Отображать значки и надписи 'Защищено ProxyTracer'
+      на проверках CAPTCHA и странице верификации.
   dashboard:
     problem:
-      proxy_tracer_missing_key: "ProxyTracer неактивен! Пожалуйста, введите ваш API-ключ ProxyTracer в настройках плагина, чтобы включить блокировку."
+      proxy_tracer_missing_key: "ProxyTracer неактивен! Введите ваш API-ключ ProxyTracer в настройках плагина."
+      proxy_tracer_missing_captcha_key: "Действие CAPTCHA в ProxyTracer включено, но ключ сайта (Site Key) или секретный ключ (Secret Key) CAPTCHA не настроены."
+  proxytracer:
+    admin_title: ProxyTracer
+    error_451: Доступ запрещен. Мы обнаружили, что вы используете VPN, прокси или
+      сеть Tor, что запрещено на этом форуме.
